@@ -48,6 +48,7 @@ export class BookmarksService {
     return this.prisma.bookmark.delete({
       where: {
         id: bookmarkId,
+        userId,
       },
     });
   }

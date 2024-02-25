@@ -212,17 +212,18 @@ describe('App (e2e)', () => {
       });
     });
 
-    // describe('Delete bookmark', () => {
-    //   it('should delete bookmark', () => {
-    //     return pactum
-    //       .spec()
-    //       .delete('/bookmarks/{id}')
-    //       .withPathParams('id', '$S{bookmarkId}')
-    //       .withHeaders({
-    //         Authorization: 'Bearer $S{userAt}',
-    //       })
-    //       .expectStatus(204);
-    //   });
-    // });
+    describe('Delete bookmark', () => {
+      it('should delete bookmark', () => {
+        return pactum
+          .spec()
+          .delete('/bookmarks/{id}')
+          .withPathParams('id', '$S{bookmarkId}')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .expectStatus(204)
+          .inspect();
+      });
+    });
   });
 });

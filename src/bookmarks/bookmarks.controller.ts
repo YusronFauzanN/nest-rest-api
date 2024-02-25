@@ -52,7 +52,7 @@ export class BookmarksController {
   @Delete(':id')
   deleteBookmarkById(
     @GetUser('id') userId: number,
-    @Param('id') bookmarkId: number,
+    @Param('id', ParseIntPipe) bookmarkId: number,
   ) {
     return this.bookmarksService.deleteBookmarkById(userId, bookmarkId);
   }
